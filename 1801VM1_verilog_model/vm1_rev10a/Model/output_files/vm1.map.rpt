@@ -1,0 +1,1950 @@
+Analysis & Synthesis report for vm1
+Mon Mar 09 00:46:15 2015
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "vm1:cpu|vm1_qbus:core|vm1_pli:pli_matrix"
+ 12. Port Connectivity Checks: "vm1:cpu"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Mar 09 00:46:14 2015     ;
+; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
+; Revision Name                      ; vm1                                       ;
+; Top-level Entity Name              ; de0                                       ;
+; Family                             ; Cyclone III                               ;
+; Total logic elements               ; 2,451                                     ;
+;     Total combinational functions  ; 2,448                                     ;
+;     Dedicated logic registers      ; 77                                        ;
+; Total registers                    ; 77                                        ;
+; Total pins                         ; 252                                       ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; de0                ; vm1                ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; On                 ; Off                ;
+; Power-Up Don't Care                                                        ; Off                ; On                 ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+
+; source/vm1.v                     ; yes             ; User Verilog HDL File  ; C:/Users/V/Desktop/1801VM1_verilog_model/vm1_rev10a/Model/source/vm1.v      ;
+; source/vm1_qbus.v                ; yes             ; User Verilog HDL File  ; C:/Users/V/Desktop/1801VM1_verilog_model/vm1_rev10a/Model/source/vm1_qbus.v ;
+; source/vm1_tve.v                 ; yes             ; User Verilog HDL File  ; C:/Users/V/Desktop/1801VM1_verilog_model/vm1_rev10a/Model/source/vm1_tve.v  ;
+; source/vm1_plm.v                 ; yes             ; User Verilog HDL File  ; C:/Users/V/Desktop/1801VM1_verilog_model/vm1_rev10a/Model/source/vm1_plm.v  ;
+; source/de0top.v                  ; yes             ; User Verilog HDL File  ; C:/Users/V/Desktop/1801VM1_verilog_model/vm1_rev10a/Model/source/de0top.v   ;
+; source/config.v                  ; yes             ; User Verilog HDL File  ; C:/Users/V/Desktop/1801VM1_verilog_model/vm1_rev10a/Model/source/config.v   ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 2,451              ;
+;                                             ;                    ;
+; Total combinational functions               ; 2448               ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 1439               ;
+;     -- 3 input functions                    ; 851                ;
+;     -- <=2 input functions                  ; 158                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 2420               ;
+;     -- arithmetic mode                      ; 28                 ;
+;                                             ;                    ;
+; Total registers                             ; 77                 ;
+;     -- Dedicated logic registers            ; 77                 ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 252                ;
+; Maximum fan-out node                        ; de0_clock_50~input ;
+; Maximum fan-out                             ; 125                ;
+; Total fan-out                               ; 9315               ;
+; Average fan-out                             ; 2.97               ;
++---------------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+; |de0                          ; 2448 (0)          ; 77 (0)       ; 0           ; 0            ; 0       ; 0         ; 252  ; 0            ; |de0                                          ;              ;
+;    |vm1:cpu|                  ; 2448 (0)          ; 77 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0|vm1:cpu                                  ;              ;
+;       |vm1_qbus:core|         ; 2448 (1720)       ; 77 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0|vm1:cpu|vm1_qbus:core                    ;              ;
+;          |vm1_pli:pli_matrix| ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0|vm1:cpu|vm1_qbus:core|vm1_pli:pli_matrix ;              ;
+;          |vm1_plm:plm_matrix| ; 584 (584)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0|vm1:cpu|vm1_qbus:core|vm1_plm:plm_matrix ;              ;
+;          |vm1_timer:timer|    ; 103 (103)         ; 60 (60)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0|vm1:cpu|vm1_qbus:core|vm1_timer:timer    ;              ;
+;          |vm1_vgen:vgen|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0|vm1:cpu|vm1_qbus:core|vm1_vgen:vgen      ;              ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++------------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal               ; Free of Timing Hazards ;
++------------------------------------------------------+-----------------------------------+------------------------+
+; vm1:cpu|vm1_qbus:core|ctrl_oe                        ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_own                       ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|dmgi_in_l                      ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_flag                      ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|rply_ack[0]                    ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|rply_ack[2]                    ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|init_out[0]                    ; vm1:cpu|vm1_qbus:core|init_out[0] ; yes                    ;
+; vm1:cpu|vm1_qbus:core|abtos[2]                       ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|dmr_req                        ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_gnt_l                     ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|iak_flag                       ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|din_out_l                      ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|rply_ack[3]                    ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plrt[7]                        ; vm1:cpu|vm1_qbus:core|uplr_stb    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|dout_req                       ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|rply_ack[1]                    ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|dout_out_l                     ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|dmr_req_l                      ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sync_ena                       ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sync_out_h                     ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_win                       ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sync_out                       ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[23]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[10]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|exc_uop                        ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_win_h                     ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[7]                         ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[8]                         ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|alu_nrdy                       ; vm1:cpu|vm1_qbus:core|alu_nrdy    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|ustb1_h                        ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|ustb1                          ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|ustb_h                         ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[13]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[14]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_nosr_h                    ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_free_h                    ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[11]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|vsel[0]                        ; vm1:cpu|vm1_qbus:core|mj[12]      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|vsel[1]                        ; vm1:cpu|vm1_qbus:core|mj[12]      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|vsel[2]                        ; vm1:cpu|vm1_qbus:core|mj[12]      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|vsel[3]                        ; vm1:cpu|vm1_qbus:core|mj[12]      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[25]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[26]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[27]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plr[28]                        ; vm1:cpu|vm1_qbus:core|plm_ena     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|din_out                        ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plrtz[7]                       ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_seq[1]                    ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qbus_seq[2]                    ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|oe_clr_h                       ; de0_clock_50                      ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plrt[8]                        ; vm1:cpu|vm1_qbus:core|uplr_stb    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|dout_out                       ; GND                               ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_xx                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_02                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_16                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_14                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_00                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_csr[0]                     ; vm1:cpu|vm1_qbus:core|always26    ; no                     ;
+; vm1:cpu|vm1_qbus:core|sel_04                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_err[0]                     ; vm1:cpu|vm1_qbus:core|always27    ; no                     ;
+; vm1:cpu|vm1_qbus:core|sel_12                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_10                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|sel_06                         ; vm1:cpu|pin_sync_n~direct         ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[0]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[0]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|plrt[6]                        ; vm1:cpu|vm1_qbus:core|uplr_stb    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|au_ta0                         ; vm1:cpu|vm1_qbus:core|sync_stb    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_csr[1]                     ; vm1:cpu|vm1_qbus:core|always26    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_err[1]                     ; vm1:cpu|vm1_qbus:core|always27    ; no                     ;
+; vm1:cpu|vm1_qbus:core|areg[1]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[1]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|tplm[2]                        ; vm1:cpu|vm1_qbus:core|tplm[2]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_csr[2]                     ; vm1:cpu|vm1_qbus:core|always26    ; no                     ;
+; vm1:cpu|vm1_qbus:core|reg_err[2]                     ; vm1:cpu|vm1_qbus:core|always27    ; no                     ;
+; vm1:cpu|vm1_qbus:core|areg[2]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[2]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_err[3]                     ; vm1:cpu|vm1_qbus:core|always27    ; no                     ;
+; vm1:cpu|vm1_qbus:core|areg[3]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[3]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_err[4]                     ; vm1:cpu|vm1_qbus:core|always27    ; no                     ;
+; vm1:cpu|vm1_qbus:core|areg[4]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[4]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[5]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[5]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_err[6]                     ; vm1:cpu|vm1_qbus:core|always27    ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[6]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[6]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|reg_err[7]                     ; vm1:cpu|vm1_qbus:core|always27    ; no                     ;
+; vm1:cpu|vm1_qbus:core|areg[7]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[7]                        ; vm1:cpu|vm1_qbus:core|qreg[0]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[8]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[8]                        ; vm1:cpu|vm1_qbus:core|qreg[8]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[9]                        ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[9]                        ; vm1:cpu|vm1_qbus:core|qreg[8]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[10]                       ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[10]                       ; vm1:cpu|vm1_qbus:core|qreg[8]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[11]                       ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[11]                       ; vm1:cpu|vm1_qbus:core|qreg[8]     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|areg[12]                       ; vm1:cpu|vm1_qbus:core|au_astb     ; yes                    ;
+; vm1:cpu|vm1_qbus:core|qreg[12]                       ; vm1:cpu|vm1_qbus:core|qreg[8]     ; yes                    ;
+; Number of user-specified and inferred latches = 592  ;                                   ;                        ;
++------------------------------------------------------+-----------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 77    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 66    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 35    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                               ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; |de0|vm1:cpu|vm1_qbus:core|vm1_timer:timer|tve_count[1]  ;                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; |de0|vm1:cpu|vm1_qbus:core|vm1_timer:timer|tve_limit[14] ;                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; |de0|vm1:cpu|vm1_qbus:core|alu                           ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |de0|vm1:cpu|vm1_qbus:core|qrd                           ;                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; |de0|vm1:cpu|vm1_qbus:core|y                             ;                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; |de0|vm1:cpu|vm1_qbus:core|oxy[6]                        ;                            ;
+; 17:1               ; 15 bits   ; 165 LEs       ; 150 LEs              ; 15 LEs                 ; |de0|vm1:cpu|vm1_qbus:core|vm1_vgen:vgen|value           ;                            ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 14 LEs               ; 8 LEs                  ; |de0|vm1:cpu|vm1_qbus:core|vm1_vgen:vgen|value           ;                            ;
+; 128:1              ; 16 bits   ; 1360 LEs      ; 128 LEs              ; 1232 LEs               ; |de0|vm1:cpu|vm1_qbus:core|Selector3                     ;                            ;
+; 129:1              ; 16 bits   ; 1376 LEs      ; 80 LEs               ; 1296 LEs               ; |de0|vm1:cpu|vm1_qbus:core|y                             ;                            ;
+; 129:1              ; 16 bits   ; 1376 LEs      ; 96 LEs               ; 1280 LEs               ; |de0|vm1:cpu|vm1_qbus:core|x                             ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "vm1:cpu|vm1_qbus:core|vm1_pli:pli_matrix" ;
++----------+-------+----------+----------------------------------------+
+; Port     ; Type  ; Severity ; Details                                ;
++----------+-------+----------+----------------------------------------+
+; rq[7..5] ; Input ; Info     ; Stuck at GND                           ;
+; rq[19]   ; Input ; Info     ; Stuck at GND                           ;
++----------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "vm1:cpu"        ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; pin_ena  ; Input ; Info     ; Stuck at VCC ;
+; pin_pa_n ; Input ; Info     ; Stuck at VCC ;
++----------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:55     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
+    Info: Processing started: Mon Mar 09 00:45:21 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vm1 -c vm1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file source/vm1.v
+    Info (12023): Found entity 1: vm1
+Info (12021): Found 2 design units, including 2 entities, in source file source/vm1_qbus.v
+    Info (12023): Found entity 1: vm1_qbus
+    Info (12023): Found entity 2: vm1_vgen
+Info (12021): Found 1 design units, including 1 entities, in source file source/vm1_tve.v
+    Info (12023): Found entity 1: vm1_timer
+Info (12021): Found 5 design units, including 5 entities, in source file source/vm1_plm.v
+    Info (12023): Found entity 1: vm1_plm_model
+    Info (12023): Found entity 2: vm1_plm
+    Info (12023): Found entity 3: vm1_pli_model
+    Info (12023): Found entity 4: vm1_pli
+    Info (12023): Found entity 5: vm1_plm_check
+Info (12021): Found 1 design units, including 1 entities, in source file source/de0top.v
+    Info (12023): Found entity 1: de0
+Info (12021): Found 1 design units, including 1 entities, in source file source/tbench.v
+    Info (12023): Found entity 1: tb1
+Info (12021): Found 0 design units, including 0 entities, in source file source/config.v
+Info (12127): Elaborating entity "de0" for the top level hierarchy
+Info (12128): Elaborating entity "vm1" for hierarchy "vm1:cpu"
+Info (12128): Elaborating entity "vm1_qbus" for hierarchy "vm1:cpu|vm1_qbus:core"
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(303): inferring latch(es) for variable "ir_seq", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(321): inferring latch(es) for variable "plm_ena", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(321): inferring latch(es) for variable "sop_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(321): inferring latch(es) for variable "plm_stb", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(346): inferring latch(es) for variable "ustb", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(346): inferring latch(es) for variable "ustb_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(346): inferring latch(es) for variable "ustb1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(346): inferring latch(es) for variable "ustb1_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(346): inferring latch(es) for variable "ustb1_hl", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(346): inferring latch(es) for variable "alu_nrdy_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(369): inferring latch(es) for variable "alu_nrdy", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(383): inferring latch(es) for variable "ir_stb2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(383): inferring latch(es) for variable "ir_set", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(395): inferring latch(es) for variable "ir_stop", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(404): inferring latch(es) for variable "tplmz", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(404): inferring latch(es) for variable "tplm", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(427): inferring latch(es) for variable "plrtz", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(427): inferring latch(es) for variable "plrt", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(459): inferring latch(es) for variable "rply_ack", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(470): inferring latch(es) for variable "qbus_rmw", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(479): inferring latch(es) for variable "dmr_req", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(479): inferring latch(es) for variable "dmr_req_l", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(490): inferring latch(es) for variable "dout_req", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(502): inferring latch(es) for variable "dout_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(502): inferring latch(es) for variable "dout_out_l", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(516): inferring latch(es) for variable "din_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(516): inferring latch(es) for variable "din_out_l", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(531): inferring latch(es) for variable "ctrl_oe", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(531): inferring latch(es) for variable "oe_set_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(531): inferring latch(es) for variable "oe_clr_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(547): inferring latch(es) for variable "qbus_win", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(547): inferring latch(es) for variable "qbus_win_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(547): inferring latch(es) for variable "sync_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(547): inferring latch(es) for variable "sync_out_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(547): inferring latch(es) for variable "sync_ena", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(569): inferring latch(es) for variable "qbus_free_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(569): inferring latch(es) for variable "qbus_nosr_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(569): inferring latch(es) for variable "qbus_gnt_l", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(579): inferring latch(es) for variable "qbus_own", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(588): inferring latch(es) for variable "qbus_flag", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(597): inferring latch(es) for variable "sack_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(607): inferring latch(es) for variable "qbus_req", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(607): inferring latch(es) for variable "dmgi_in_l", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(621): inferring latch(es) for variable "qbus_seq", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(688): inferring latch(es) for variable "reg_csr", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(688): inferring latch(es) for variable "reg_csr0_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(728): inferring latch(es) for variable "reg_err", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(728): inferring latch(es) for variable "exc_dbl", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_xx", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_00", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_02", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_04", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_06", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_10", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_12", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_14", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(801): inferring latch(es) for variable "sel_16", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(822): inferring latch(es) for variable "start_irq", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(822): inferring latch(es) for variable "rply_s1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(822): inferring latch(es) for variable "rply_s2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(841): inferring latch(es) for variable "rq", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(878): inferring latch(es) for variable "exc_uop", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(886): inferring latch(es) for variable "plir", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(911): inferring latch(es) for variable "aclo", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(911): inferring latch(es) for variable "acok", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(930): inferring latch(es) for variable "irq2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(930): inferring latch(es) for variable "irq3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(955): inferring latch(es) for variable "uop", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(955): inferring latch(es) for variable "oat", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(955): inferring latch(es) for variable "ivto", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(971): inferring latch(es) for variable "vsel", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(981): inferring latch(es) for variable "pli_ena", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(984): inferring latch(es) for variable "pli_ena_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(984): inferring latch(es) for variable "pli_stb_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(984): inferring latch(es) for variable "pli_req", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(994): inferring latch(es) for variable "pli_lat", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1003): inferring latch(es) for variable "iak_flag", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1024): inferring latch(es) for variable "abtos", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1024): inferring latch(es) for variable "mj_res_h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1051): inferring latch(es) for variable "init_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1088): inferring latch(es) for variable "ma", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1093): inferring latch(es) for variable "mj_stb1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1093): inferring latch(es) for variable "mj_stb2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1093): inferring latch(es) for variable "psw_mj", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1093): inferring latch(es) for variable "psw_stb", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1093): inferring latch(es) for variable "psw_stbc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1093): inferring latch(es) for variable "t5843", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1112): inferring latch(es) for variable "ira", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1112): inferring latch(es) for variable "ir", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1122): inferring latch(es) for variable "plm", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1170): inferring latch(es) for variable "plr", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1175): inferring latch(es) for variable "plr18r", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1175): inferring latch(es) for variable "plr33r", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1190): inferring latch(es) for variable "mj", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1228): inferring latch(es) for variable "fsel", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1237): inferring latch(es) for variable "psw", which holds its previous value in one or more paths through the always construct
+Info (10264): Verilog HDL Case Statement information at vm1_qbus.v(1355): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at vm1_qbus.v(1366): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at vm1_qbus.v(1390): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at vm1_qbus.v(1401): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1475): inferring latch(es) for variable "qreg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1490): inferring latch(es) for variable "areg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1498): inferring latch(es) for variable "au_ta0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1514): inferring latch(es) for variable "xreg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1514): inferring latch(es) for variable "yreg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1583): inferring latch(es) for variable "oxy", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vm1_qbus.v(1583): inferring latch(es) for variable "axy", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "axy[0]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[1]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[2]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[3]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[4]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[5]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[6]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[7]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[8]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[9]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[10]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[11]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[12]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[13]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[14]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "axy[15]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[0]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[1]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[2]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[3]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[4]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[5]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[6]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[7]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[8]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[9]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[10]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[11]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[12]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[13]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[14]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "oxy[15]" at vm1_qbus.v(1583)
+Info (10041): Inferred latch for "yreg[0]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[1]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[2]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[3]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[4]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[5]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[6]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[7]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[8]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[9]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[10]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[11]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[12]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[13]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[14]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "yreg[15]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[0]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[1]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[2]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[3]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[4]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[5]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[6]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[7]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[8]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[9]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[10]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[11]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[12]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[13]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[14]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "xreg[15]" at vm1_qbus.v(1514)
+Info (10041): Inferred latch for "au_ta0" at vm1_qbus.v(1498)
+Info (10041): Inferred latch for "areg[0]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[1]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[2]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[3]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[4]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[5]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[6]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[7]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[8]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[9]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[10]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[11]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[12]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[13]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[14]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "areg[15]" at vm1_qbus.v(1490)
+Info (10041): Inferred latch for "qreg[0]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[1]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[2]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[3]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[4]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[5]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[6]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[7]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[8]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[9]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[10]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[11]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[12]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[13]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[14]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "qreg[15]" at vm1_qbus.v(1475)
+Info (10041): Inferred latch for "gpr[13][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[13][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[12][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[11][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[10][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[9][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[8][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[7][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[6][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[5][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[4][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[3][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[2][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[1][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][0]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][1]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][2]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][3]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][4]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][5]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][6]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][7]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][8]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][9]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][10]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][11]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][12]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][13]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][14]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "gpr[0][15]" at vm1_qbus.v(1421)
+Info (10041): Inferred latch for "psw[0]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[1]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[2]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[3]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[4]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[5]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[6]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[7]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[10]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[11]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[12]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[13]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[14]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "psw[15]" at vm1_qbus.v(1237)
+Info (10041): Inferred latch for "fsel[0]" at vm1_qbus.v(1228)
+Info (10041): Inferred latch for "fsel[1]" at vm1_qbus.v(1228)
+Info (10041): Inferred latch for "fsel[2]" at vm1_qbus.v(1228)
+Info (10041): Inferred latch for "fsel[3]" at vm1_qbus.v(1228)
+Info (10041): Inferred latch for "mj[0]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[1]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[2]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[3]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[4]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[5]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[6]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[7]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[8]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[9]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[10]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[11]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[12]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[13]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "mj[14]" at vm1_qbus.v(1190)
+Info (10041): Inferred latch for "plr33r" at vm1_qbus.v(1175)
+Info (10041): Inferred latch for "plr18r" at vm1_qbus.v(1175)
+Info (10041): Inferred latch for "plr[4]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[6]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[7]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[8]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[10]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[11]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[13]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[14]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[16]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[17]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[18]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[20]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[21]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[22]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[23]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[25]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[26]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[27]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[28]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[30]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[31]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[32]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plr[33]" at vm1_qbus.v(1170)
+Info (10041): Inferred latch for "plm[0]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[1]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[2]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[3]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[4]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[5]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[6]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[7]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[8]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[9]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[10]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[11]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[12]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[13]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[14]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[15]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[16]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[17]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[18]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[19]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[20]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[21]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[22]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[23]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[24]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[25]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[26]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[27]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[28]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[29]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[30]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[31]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[32]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "plm[33]" at vm1_qbus.v(1122)
+Info (10041): Inferred latch for "ir[0]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[1]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[2]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[3]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[4]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[5]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[6]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[7]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[8]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[9]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[10]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[11]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[12]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[13]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[14]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ir[15]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[0]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[1]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[2]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[3]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[4]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[5]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[6]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[7]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[8]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[9]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[10]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[11]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[12]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[13]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[14]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "ira[15]" at vm1_qbus.v(1112)
+Info (10041): Inferred latch for "t5843" at vm1_qbus.v(1093)
+Info (10041): Inferred latch for "psw_stbc" at vm1_qbus.v(1093)
+Info (10041): Inferred latch for "psw_stb" at vm1_qbus.v(1093)
+Info (10041): Inferred latch for "psw_mj" at vm1_qbus.v(1093)
+Info (10041): Inferred latch for "mj_stb2" at vm1_qbus.v(1093)
+Info (10041): Inferred latch for "mj_stb1" at vm1_qbus.v(1093)
+Info (10041): Inferred latch for "ma[0]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[1]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[2]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[3]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[4]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[5]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[6]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[7]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[8]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[9]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[10]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[11]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[12]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[13]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "ma[14]" at vm1_qbus.v(1088)
+Info (10041): Inferred latch for "init_out[0]" at vm1_qbus.v(1051)
+Info (10041): Inferred latch for "mj_res_h" at vm1_qbus.v(1024)
+Info (10041): Inferred latch for "abtos[2]" at vm1_qbus.v(1024)
+Info (10041): Inferred latch for "iak_flag" at vm1_qbus.v(1003)
+Info (10041): Inferred latch for "pli_lat" at vm1_qbus.v(994)
+Info (10041): Inferred latch for "pli_req" at vm1_qbus.v(984)
+Info (10041): Inferred latch for "pli_stb_h" at vm1_qbus.v(984)
+Info (10041): Inferred latch for "pli_ena_h" at vm1_qbus.v(984)
+Info (10041): Inferred latch for "pli_ena" at vm1_qbus.v(981)
+Info (10041): Inferred latch for "vsel[0]" at vm1_qbus.v(971)
+Info (10041): Inferred latch for "vsel[1]" at vm1_qbus.v(971)
+Info (10041): Inferred latch for "vsel[2]" at vm1_qbus.v(971)
+Info (10041): Inferred latch for "vsel[3]" at vm1_qbus.v(971)
+Info (10041): Inferred latch for "ivto" at vm1_qbus.v(955)
+Info (10041): Inferred latch for "oat" at vm1_qbus.v(955)
+Info (10041): Inferred latch for "uop" at vm1_qbus.v(955)
+Info (10041): Inferred latch for "irq3" at vm1_qbus.v(930)
+Info (10041): Inferred latch for "irq2" at vm1_qbus.v(930)
+Info (10041): Inferred latch for "acok" at vm1_qbus.v(911)
+Info (10041): Inferred latch for "aclo" at vm1_qbus.v(911)
+Info (10041): Inferred latch for "plir[0]" at vm1_qbus.v(886)
+Info (10041): Inferred latch for "plir[1]" at vm1_qbus.v(886)
+Info (10041): Inferred latch for "plir[2]" at vm1_qbus.v(886)
+Info (10041): Inferred latch for "plir[3]" at vm1_qbus.v(886)
+Info (10041): Inferred latch for "exc_uop" at vm1_qbus.v(878)
+Info (10041): Inferred latch for "rq[0]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[1]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[2]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[3]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[4]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[5]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[6]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[7]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[8]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[9]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[10]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[11]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[12]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[13]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[14]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[15]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[16]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[17]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[18]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rq[19]" at vm1_qbus.v(841)
+Info (10041): Inferred latch for "rply_s2" at vm1_qbus.v(822)
+Info (10041): Inferred latch for "rply_s1" at vm1_qbus.v(822)
+Info (10041): Inferred latch for "start_irq" at vm1_qbus.v(822)
+Info (10041): Inferred latch for "sel_16" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_14" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_12" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_10" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_06" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_04" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_02" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_00" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "sel_xx" at vm1_qbus.v(801)
+Info (10041): Inferred latch for "exc_dbl[0]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "exc_dbl[1]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "exc_dbl[2]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "exc_dbl[3]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[0]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[1]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[2]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[3]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[4]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[5]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[6]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_err[7]" at vm1_qbus.v(728)
+Info (10041): Inferred latch for "reg_csr0_h" at vm1_qbus.v(688)
+Info (10041): Inferred latch for "reg_csr[0]" at vm1_qbus.v(688)
+Info (10041): Inferred latch for "reg_csr[1]" at vm1_qbus.v(688)
+Info (10041): Inferred latch for "reg_csr[2]" at vm1_qbus.v(688)
+Info (10041): Inferred latch for "qbus_seq[0]" at vm1_qbus.v(621)
+Info (10041): Inferred latch for "qbus_seq[1]" at vm1_qbus.v(621)
+Info (10041): Inferred latch for "qbus_seq[2]" at vm1_qbus.v(621)
+Info (10041): Inferred latch for "dmgi_in_l" at vm1_qbus.v(607)
+Info (10041): Inferred latch for "qbus_req" at vm1_qbus.v(607)
+Info (10041): Inferred latch for "sack_out" at vm1_qbus.v(597)
+Info (10041): Inferred latch for "qbus_flag" at vm1_qbus.v(588)
+Info (10041): Inferred latch for "qbus_own" at vm1_qbus.v(579)
+Info (10041): Inferred latch for "qbus_gnt_l" at vm1_qbus.v(569)
+Info (10041): Inferred latch for "qbus_nosr_h" at vm1_qbus.v(569)
+Info (10041): Inferred latch for "qbus_free_h" at vm1_qbus.v(569)
+Info (10041): Inferred latch for "sync_ena" at vm1_qbus.v(547)
+Info (10041): Inferred latch for "sync_out_h" at vm1_qbus.v(547)
+Info (10041): Inferred latch for "sync_out" at vm1_qbus.v(547)
+Info (10041): Inferred latch for "qbus_win_h" at vm1_qbus.v(547)
+Info (10041): Inferred latch for "qbus_win" at vm1_qbus.v(547)
+Info (10041): Inferred latch for "oe_clr_h" at vm1_qbus.v(531)
+Info (10041): Inferred latch for "oe_set_h" at vm1_qbus.v(531)
+Info (10041): Inferred latch for "ctrl_oe" at vm1_qbus.v(531)
+Info (10041): Inferred latch for "din_out_l" at vm1_qbus.v(516)
+Info (10041): Inferred latch for "din_out" at vm1_qbus.v(516)
+Info (10041): Inferred latch for "dout_out_l" at vm1_qbus.v(502)
+Info (10041): Inferred latch for "dout_out" at vm1_qbus.v(502)
+Info (10041): Inferred latch for "dout_req" at vm1_qbus.v(490)
+Info (10041): Inferred latch for "dmr_req_l" at vm1_qbus.v(479)
+Info (10041): Inferred latch for "dmr_req" at vm1_qbus.v(479)
+Info (10041): Inferred latch for "qbus_rmw" at vm1_qbus.v(470)
+Info (10041): Inferred latch for "rply_ack[0]" at vm1_qbus.v(459)
+Info (10041): Inferred latch for "rply_ack[1]" at vm1_qbus.v(459)
+Info (10041): Inferred latch for "rply_ack[2]" at vm1_qbus.v(459)
+Info (10041): Inferred latch for "rply_ack[3]" at vm1_qbus.v(459)
+Info (10041): Inferred latch for "plrt[6]" at vm1_qbus.v(427)
+Info (10041): Inferred latch for "plrt[7]" at vm1_qbus.v(427)
+Info (10041): Inferred latch for "plrt[8]" at vm1_qbus.v(427)
+Info (10041): Inferred latch for "plrtz[6]" at vm1_qbus.v(427)
+Info (10041): Inferred latch for "plrtz[7]" at vm1_qbus.v(427)
+Info (10041): Inferred latch for "plrtz[8]" at vm1_qbus.v(427)
+Info (10041): Inferred latch for "tplm[1]" at vm1_qbus.v(404)
+Info (10041): Inferred latch for "tplm[2]" at vm1_qbus.v(404)
+Info (10041): Inferred latch for "tplm[3]" at vm1_qbus.v(404)
+Info (10041): Inferred latch for "tplmz[1]" at vm1_qbus.v(404)
+Info (10041): Inferred latch for "tplmz[2]" at vm1_qbus.v(404)
+Info (10041): Inferred latch for "tplmz[3]" at vm1_qbus.v(404)
+Info (10041): Inferred latch for "ir_stop" at vm1_qbus.v(395)
+Info (10041): Inferred latch for "ir_set" at vm1_qbus.v(383)
+Info (10041): Inferred latch for "ir_stb2" at vm1_qbus.v(383)
+Info (10041): Inferred latch for "alu_nrdy" at vm1_qbus.v(369)
+Info (10041): Inferred latch for "alu_nrdy_h" at vm1_qbus.v(346)
+Info (10041): Inferred latch for "ustb1_hl" at vm1_qbus.v(346)
+Info (10041): Inferred latch for "ustb1_h" at vm1_qbus.v(346)
+Info (10041): Inferred latch for "ustb1" at vm1_qbus.v(346)
+Info (10041): Inferred latch for "ustb_h" at vm1_qbus.v(346)
+Info (10041): Inferred latch for "ustb" at vm1_qbus.v(346)
+Info (10041): Inferred latch for "plm_stb" at vm1_qbus.v(321)
+Info (10041): Inferred latch for "sop_out[0]" at vm1_qbus.v(321)
+Info (10041): Inferred latch for "sop_out[1]" at vm1_qbus.v(321)
+Info (10041): Inferred latch for "sop_out[2]" at vm1_qbus.v(321)
+Info (10041): Inferred latch for "sop_out[3]" at vm1_qbus.v(321)
+Info (10041): Inferred latch for "plm_ena" at vm1_qbus.v(321)
+Info (10041): Inferred latch for "ir_seq[0]" at vm1_qbus.v(303)
+Info (10041): Inferred latch for "ir_seq[1]" at vm1_qbus.v(303)
+Info (12128): Elaborating entity "vm1_timer" for hierarchy "vm1:cpu|vm1_qbus:core|vm1_timer:timer"
+Info (12128): Elaborating entity "vm1_pli" for hierarchy "vm1:cpu|vm1_qbus:core|vm1_pli:pli_matrix"
+Info (12128): Elaborating entity "vm1_plm" for hierarchy "vm1:cpu|vm1_qbus:core|vm1_plm:plm_matrix"
+Info (12128): Elaborating entity "vm1_vgen" for hierarchy "vm1:cpu|vm1_qbus:core|vm1_vgen:vgen"
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|init_out[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[23]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|alu_nrdy has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal de0_clock_50
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|vsel[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|vsel[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|vsel[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|vsel[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_csr[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_csr[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|tplm[2] has unsafe behavior
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|mj_res
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_csr[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|reg_err[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|sel_xx
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|areg[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|qreg[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|ustb has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb1
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|axy[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|oxy[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|plr[16]
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|psw[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[6][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[0][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[12][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[4][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[2][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[10][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[8][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[7][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[9][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[3][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[1][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[13][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[5][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|gpr[11][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|fsel[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|psw_mj
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|fsel[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|psw_mj
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|fsel[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|psw_mj
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|fsel[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|psw_mj
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|xreg[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|yreg[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|ustb2
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|mj[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|mj[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|mj[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|pli_stb
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|tplm[1] has unsafe behavior
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|mj_res
+Warning (13012): Latch vm1:cpu|vm1_qbus:core|tplm[3] has unsafe behavior
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal vm1:cpu|vm1_qbus:core|mj_res
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "de0_dram_addr[0]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[1]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[2]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[3]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[4]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[5]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[6]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[7]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[8]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[9]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[10]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[11]" is stuck at GND
+    Warning (13410): Pin "de0_dram_addr[12]" is stuck at GND
+    Warning (13410): Pin "de0_dram_ldqm" is stuck at GND
+    Warning (13410): Pin "de0_dram_udqm" is stuck at GND
+    Warning (13410): Pin "de0_dram_we_n" is stuck at VCC
+    Warning (13410): Pin "de0_dram_cas_n" is stuck at VCC
+    Warning (13410): Pin "de0_dram_ras_n" is stuck at VCC
+    Warning (13410): Pin "de0_dram_cs_n" is stuck at VCC
+    Warning (13410): Pin "de0_dram_ba[0]" is stuck at GND
+    Warning (13410): Pin "de0_dram_ba[1]" is stuck at GND
+    Warning (13410): Pin "de0_dram_clk" is stuck at GND
+    Warning (13410): Pin "de0_dram_cke" is stuck at GND
+    Warning (13410): Pin "de0_fl_we_n" is stuck at VCC
+    Warning (13410): Pin "de0_fl_rst_n" is stuck at GND
+    Warning (13410): Pin "de0_fl_oe_n" is stuck at VCC
+    Warning (13410): Pin "de0_fl_ce_n" is stuck at VCC
+    Warning (13410): Pin "de0_fl_wp_n" is stuck at GND
+    Warning (13410): Pin "de0_lcd_blig" is stuck at GND
+    Warning (13410): Pin "de0_lcd_rw" is stuck at GND
+    Warning (13410): Pin "de0_lcd_en" is stuck at GND
+    Warning (13410): Pin "de0_lcd_rs" is stuck at GND
+    Warning (13410): Pin "de0_sd_clk" is stuck at GND
+    Warning (13410): Pin "de0_vga_hs" is stuck at GND
+    Warning (13410): Pin "de0_vga_vs" is stuck at GND
+    Warning (13410): Pin "de0_vga_r[0]" is stuck at GND
+    Warning (13410): Pin "de0_vga_r[1]" is stuck at GND
+    Warning (13410): Pin "de0_vga_r[2]" is stuck at GND
+    Warning (13410): Pin "de0_vga_r[3]" is stuck at GND
+    Warning (13410): Pin "de0_vga_g[0]" is stuck at GND
+    Warning (13410): Pin "de0_vga_g[1]" is stuck at GND
+    Warning (13410): Pin "de0_vga_g[2]" is stuck at GND
+    Warning (13410): Pin "de0_vga_g[3]" is stuck at GND
+    Warning (13410): Pin "de0_vga_b[0]" is stuck at GND
+    Warning (13410): Pin "de0_vga_b[1]" is stuck at GND
+    Warning (13410): Pin "de0_vga_b[2]" is stuck at GND
+    Warning (13410): Pin "de0_vga_b[3]" is stuck at GND
+    Warning (13410): Pin "de0_gpio0_clkout[0]" is stuck at GND
+    Warning (13410): Pin "de0_gpio0_clkout[1]" is stuck at GND
+    Warning (13410): Pin "de0_gpio1_clkout[0]" is stuck at GND
+    Warning (13410): Pin "de0_gpio1_clkout[1]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+Warning (21074): Design contains 22 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "de0_clock_50_2"
+    Warning (15610): No output dependent on input pin "de0_button[0]"
+    Warning (15610): No output dependent on input pin "de0_button[1]"
+    Warning (15610): No output dependent on input pin "de0_button[2]"
+    Warning (15610): No output dependent on input pin "de0_sw[0]"
+    Warning (15610): No output dependent on input pin "de0_sw[1]"
+    Warning (15610): No output dependent on input pin "de0_sw[2]"
+    Warning (15610): No output dependent on input pin "de0_sw[3]"
+    Warning (15610): No output dependent on input pin "de0_sw[4]"
+    Warning (15610): No output dependent on input pin "de0_sw[5]"
+    Warning (15610): No output dependent on input pin "de0_sw[6]"
+    Warning (15610): No output dependent on input pin "de0_sw[7]"
+    Warning (15610): No output dependent on input pin "de0_sw[8]"
+    Warning (15610): No output dependent on input pin "de0_sw[9]"
+    Warning (15610): No output dependent on input pin "de0_uart_rxd"
+    Warning (15610): No output dependent on input pin "de0_uart_rts"
+    Warning (15610): No output dependent on input pin "de0_fl_rb"
+    Warning (15610): No output dependent on input pin "de0_sd_wp_n"
+    Warning (15610): No output dependent on input pin "de0_gpio0_clkin[0]"
+    Warning (15610): No output dependent on input pin "de0_gpio0_clkin[1]"
+    Warning (15610): No output dependent on input pin "de0_gpio1_clkin[0]"
+    Warning (15610): No output dependent on input pin "de0_gpio1_clkin[1]"
+Info (21057): Implemented 2716 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 118 output pins
+    Info (21060): Implemented 111 bidirectional pins
+    Info (21061): Implemented 2464 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 900 warnings
+    Info: Peak virtual memory: 320 megabytes
+    Info: Processing ended: Mon Mar 09 00:46:15 2015
+    Info: Elapsed time: 00:00:54
+    Info: Total CPU time (on all processors): 00:00:53
+
+

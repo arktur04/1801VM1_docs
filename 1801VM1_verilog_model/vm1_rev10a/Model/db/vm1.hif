@@ -1,0 +1,297 @@
+Quartus II 32-bit
+Version 11.1 Build 173 11/01/2011 SJ Full Version
+13
+1097
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+de0
+# storage
+db|vm1.(0).cnf
+db|vm1.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|de0top.v
+c47f7a6be85a228a6747951a9acb6c9a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+source|config.v
+de29874d1e6b6162295f9f9c286e4c6
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+vm1
+# storage
+db|vm1.(1).cnf
+db|vm1.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|vm1.v
+48473075d9cba74c3c7c9c9f42641e7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+source|config.v
+de29874d1e6b6162295f9f9c286e4c6
+}
+# hierarchies {
+vm1:cpu
+}
+# macro_sequence
+
+# end
+# entity
+vm1_qbus
+# storage
+db|vm1.(2).cnf
+db|vm1.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|vm1_qbus.v
+cb5dfd2acb96a015c8e1885082c3e6f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+source|config.v
+de29874d1e6b6162295f9f9c286e4c6
+}
+# hierarchies {
+vm1:cpu|vm1_qbus:core
+}
+# macro_sequence
+
+# end
+# entity
+vm1_timer
+# storage
+db|vm1.(3).cnf
+db|vm1.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|vm1_tve.v
+e0a639dcf15ecb75c0cecade218e7c1
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+source|config.v
+de29874d1e6b6162295f9f9c286e4c6
+}
+# hierarchies {
+vm1:cpu|vm1_qbus:core|vm1_timer:timer
+}
+# macro_sequence
+
+# end
+# entity
+vm1_pli
+# storage
+db|vm1.(4).cnf
+db|vm1.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|vm1_plm.v
+1c683eb5ab7de7b44b201626a03cc39a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+vm1:cpu|vm1_qbus:core|vm1_pli:pli_matrix
+}
+# macro_sequence
+
+# end
+# entity
+vm1_plm
+# storage
+db|vm1.(5).cnf
+db|vm1.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|vm1_plm.v
+1c683eb5ab7de7b44b201626a03cc39a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+vm1:cpu|vm1_qbus:core|vm1_plm:plm_matrix
+}
+# macro_sequence
+
+# end
+# entity
+vm1_vgen
+# storage
+db|vm1.(6).cnf
+db|vm1.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+source|vm1_qbus.v
+cb5dfd2acb96a015c8e1885082c3e6f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+source|config.v
+de29874d1e6b6162295f9f9c286e4c6
+}
+# hierarchies {
+vm1:cpu|vm1_qbus:core|vm1_vgen:vgen
+}
+# macro_sequence
+
+# end
+# complete
+
